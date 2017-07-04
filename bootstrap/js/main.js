@@ -78,17 +78,17 @@ function fetchBookmarks(){
   var bookmarksResults = document.getElementById('bookmarksResults');
   //Build Output
   bookmarksResults.innerHTML = '';
-  
+
   for(var i = 0; i < bookmarks.length; i++){
     var name = bookmarks[i].name;
     var url = bookmarks[i].url;
 
-    bookmarksResults.innerHTML += '<div class="well">'+
-                                  '<h3>' + name +
-                                  ' <a class="btn btn-default" target="_blank" href="'+ url +'">Visit</a>'+
-                                  ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a>'+
-                                  '<h3>'+
-                                  '</div>';
+    bookmarksResults.innerHTML += `<div class="well">
+                                  <h3> ${name}
+                                  <a class="btn btn-default" target="_blank" href="${url}">Visit</a>
+                                  <a onclick="deleteBookmark(\'${url}\');" class="btn btn-danger" href="#">Delete</a>
+                                  <h3>
+                                  </div>`;
   }
 }
 
@@ -96,7 +96,7 @@ function fetchBookmarks(){
 function validateForm(siteName, siteUrl){
   //Validation parsing data
   if(!siteName || !siteUrl){
-    alert('Please fill Site Name and Site Url in the form');
+    alert(`Please fill Site Name and Site Url in the form`);
     return false;
   }
 
