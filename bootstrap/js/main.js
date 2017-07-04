@@ -52,7 +52,7 @@ function saveBookmark(e){
 }
 
 //Delete Bookmark
-function deleteBookmark(url){
+const deleteBookmark = (url) => {
   //Get bookmarks from localStorage
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   //Loop throught bookmarks
@@ -67,11 +67,11 @@ function deleteBookmark(url){
 
   //Re-fetch Bookmark
   fetchBookmarks();
-}
+};
 
 
 //Fetch bookmarks
-function fetchBookmarks(){
+const fetchBookmarks = () => {
   //Get bookmarks from localStorage
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   //Get Output id
@@ -90,10 +90,10 @@ function fetchBookmarks(){
                                   <h3>
                                   </div>`;
   }
-}
+};
 
 //Validate Form Input
-function validateForm(siteName, siteUrl){
+const validateForm = (siteName, siteUrl) => {
   //Validation parsing data
   if(!siteName || !siteUrl){
     alert(`Please fill Site Name and Site Url in the form`);
@@ -111,4 +111,4 @@ function validateForm(siteName, siteUrl){
   }
 
   return true;
-}
+};
